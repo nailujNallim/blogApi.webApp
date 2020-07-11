@@ -5,27 +5,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { BlogComponent } from './blog/blog.component';
 import { PostsDashboardComponent } from './posts-dashboard/posts-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NewPostComponent } from './new-post/new-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogComponent,
-    PostsDashboardComponent
+    PostsDashboardComponent,
+    NewPostComponent
   ],
   imports: [
     HttpClientModule,
+    MatInputModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
     MatSliderModule,
     MatGridListModule,
     MatCardModule,
@@ -36,6 +44,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule
   ],
   providers: [],
+  entryComponents: [NewPostComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
