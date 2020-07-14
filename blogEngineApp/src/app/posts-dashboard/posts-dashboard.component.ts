@@ -82,7 +82,7 @@ export class PostsDashboardComponent implements OnInit {
     this.userTitle = 'Published Posts!';
 
     this.currentUser.fullName = 'Unregistered User';
-    this.currentUser.userName = 'unreguser';
+    this.currentUser.userName = '';
     this.currentUser.userType = UserType.Unregistered;
     this.postService.SetUserType(this.currentUser);
     this.getPosts();
@@ -91,7 +91,7 @@ export class PostsDashboardComponent implements OnInit {
     this.userTitle = 'My Posts';
 
     this.currentUser.fullName = 'Writer User';
-    this.currentUser.userName = 'vivipg';
+    this.currentUser.userName = 'writer';
     this.currentUser.userType = UserType.Writer;
     this.postService.SetUserType(this.currentUser);
     this.getPosts();
@@ -100,14 +100,14 @@ export class PostsDashboardComponent implements OnInit {
     this.userTitle = 'Pending Posts';
 
     this.currentUser.fullName = 'Editor User';
-    this.currentUser.userName = 'juliamg';
+    this.currentUser.userName = 'editor';
     this.currentUser.userType = UserType.Editor;
     this.postService.SetUserType(this.currentUser);
     this.getPosts();
   }
 
   canEdit(status : StatusPost): boolean {
-    return (StatusPost.Pending == status) && (UserType.Writer == this.currentUser.userType);
+    return (StatusPost.Approved != status) && (UserType.Writer == this.currentUser.userType);
   }
 
   canComment(status : StatusPost): boolean {

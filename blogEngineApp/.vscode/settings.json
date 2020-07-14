@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/72080457-ac96-4200-bc09-ec70928e2cd3/resourceGroups/NetworkWatcherRG/providers/Microsoft.Web/sites/zmgblogEngineapi20200714084745/slots/blogEngineWebApp",
+    "appService.deploySubpath": "."
+}
