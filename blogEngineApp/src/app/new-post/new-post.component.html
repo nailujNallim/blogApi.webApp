@@ -1,0 +1,22 @@
+<form [formGroup]="newPostForm" (ngSubmit)="SavePost()">
+  <h2 mat-dialog-title>Add New Post</h2>
+  <mat-dialog-content>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Title:</mat-label>
+        <input matInput formControlName="titleFormControl"  placeholder="Write a title">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field color="primary" appearance="outline">
+        <mat-label>Content:</mat-label>
+        <input matInput formControlName="contentFormControl" placeholder="Write a content">
+      </mat-form-field>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="submit">Save</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-button [mat-dialog-close]="true">Close</button>
+  </mat-dialog-actions>
+</form>
